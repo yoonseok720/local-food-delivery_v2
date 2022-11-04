@@ -12,7 +12,13 @@ public class OrderList {
 
         @Id
         //@GeneratedValue(strategy=GenerationType.AUTO)
-        private Long id;
+        private Long orderId;
+        private String menu;
+        private Integer qty;
+        private String orderStatus;
+        private String userId;
+        private String address;
+        private String payStatus;
 
 
 }

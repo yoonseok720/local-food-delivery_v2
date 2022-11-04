@@ -88,7 +88,7 @@
 
             this.newValue = {
                 'payid': 0,
-                'orderId': '',
+                'orderId': 0,
                 'amount': 0,
                 'status': '',
             }

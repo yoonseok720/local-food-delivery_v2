@@ -17,10 +17,12 @@
         </v-card-title >
 
         <v-card-text>
+            <Number label="OrderId" v-model="value.orderId" :editMode="editMode"/>
             <String label="Menu" v-model="value.menu" :editMode="editMode"/>
-            <String label="Address" v-model="value.address" :editMode="editMode"/>
-            <String label="OrderId" v-model="value.orderId" :editMode="editMode"/>
             <Number label="Qty" v-model="value.qty" :editMode="editMode"/>
+            <String label="Status" v-model="value.status" :editMode="editMode"/>
+            <String label="UserId" v-model="value.userId" :editMode="editMode"/>
+            <String label="Address" v-model="value.address" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>
@@ -195,3 +197,4 @@
     }
 </script>
 
+            <String label="Userid" v-model="value.userid" :editMode="editMode"/>

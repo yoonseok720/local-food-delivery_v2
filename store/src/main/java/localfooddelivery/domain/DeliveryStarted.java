@@ -9,11 +9,12 @@ import lombok.*;
 @ToString
 public class DeliveryStarted extends AbstractEvent {
 
-    private Long id;
     private String menu;
     private String address;
-    private String orderId;
+    private Long orderId;
     private String status;
+    private String userid;
+    private Integer qty;
 
     public DeliveryStarted(Order aggregate){
         super(aggregate);

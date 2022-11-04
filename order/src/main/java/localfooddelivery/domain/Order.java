@@ -17,11 +17,14 @@ import java.util.Date;
 public class Order  {
 
     
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     
     
     
     
-    private Long orderid;
+    
+    private Long orderId;
     
     
     
@@ -40,6 +43,18 @@ public class Order  {
     
     
     private String status;
+    
+    
+    
+    
+    
+    private String userId;
+    
+    
+    
+    
+    
+    private String address;
 
     @PostPersist
     public void onPostPersist(){

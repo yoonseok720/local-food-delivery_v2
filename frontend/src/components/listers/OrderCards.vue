@@ -68,10 +68,12 @@
             me.values = temp.data._embedded.orders;
             
             me.newValue = {
+                'orderId': 0,
                 'menu': '',
-                'address': '',
-                'orderId': '',
                 'qty': 0,
+                'status': '',
+                'userId': '',
+                'address': '',
             }
         },
         methods:{
@@ -117,3 +119,4 @@
     }
 </style>
 
+                'userid': '',

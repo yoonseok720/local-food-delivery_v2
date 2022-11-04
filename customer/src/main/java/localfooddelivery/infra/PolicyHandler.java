@@ -109,21 +109,6 @@ public class PolicyHandler{
         
 
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='CouponIssued'")
-    public void wheneverCouponIssued_KakaoNotice(@Payload CouponIssued couponIssued){
-
-        CouponIssued event = couponIssued;
-        System.out.println("\n\n##### listener KakaoNotice : " + couponIssued + "\n\n");
-
-
-        // Comments // 
-		//Notice to customer via kakao talk
-
-        // Sample Logic //
-
-        
-
-    }
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeliveryStarted'")
     public void wheneverDeliveryStarted_KakaoNotice(@Payload DeliveryStarted deliveryStarted){
 
