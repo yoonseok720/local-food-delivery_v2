@@ -9,6 +9,9 @@ import java.util.*;
 public class OrderCanceled extends AbstractEvent {
 
     private Long orderId;
+    private String menu;
+    private Integer qty;
+    private String status;
 }
 
 

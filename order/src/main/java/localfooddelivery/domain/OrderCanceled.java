@@ -2,8 +2,9 @@ package localfooddelivery.domain;
 
 import localfooddelivery.domain.*;
 import localfooddelivery.infra.AbstractEvent;
-import lombok.*;
 import java.util.*;
+import lombok.*;
+
 @Data
 @ToString
 public class OrderCanceled extends AbstractEvent {
@@ -12,6 +13,11 @@ public class OrderCanceled extends AbstractEvent {
     private String menu;
     private Integer qty;
     private String status;
+
+    public OrderCanceled(Order aggregate){
+        super(aggregate);
+    }
+    public OrderCanceled(){
+        super();
+    }
 }
-
-
