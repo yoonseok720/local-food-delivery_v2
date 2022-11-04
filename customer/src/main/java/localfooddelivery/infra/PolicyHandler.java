@@ -44,7 +44,7 @@ public class PolicyHandler{
         System.out.println("\n\n##### listener KakaoNotice : " + orderPlaced + "\n\n");
 
 
-        // Comments // 
+        // Comments   ..// 
 		//Notice to customer via kakao talk
 
         // Sample Logic //

@@ -39,23 +39,13 @@ public class Payment {
         return paymentRepository;
     }
 
-    public static void cancelPayment(OrderCanceled orderCanceled) {
-        /** Example 1:  new item 
-        Payment payment = new Payment();
-        repository().save(payment);
-
-        */
-
-        /** Example 2:  finding and process
+    public static void cancelPayment(OrderCanceled orderCanceled) {        
         
-        repository().findById(orderCanceled.get???()).ifPresent(payment->{
-            
-            payment // do something
-            repository().save(payment);
-
-
-         });
-        */
+        // modified 
+        repository().findById(orderCanceled.getOrderId()).ifPresent(payment->{
+            payment.setStatus("Canceled");
+            repository().save(payment);        
+        });        
 
     }
 }
