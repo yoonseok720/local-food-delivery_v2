@@ -6,7 +6,6 @@ import javax.persistence.*;
 import localfooddelivery.PayApplication;
 import localfooddelivery.domain.PaymentApproved;
 import localfooddelivery.domain.PaymentCanceled;
-import localfooddelivery.domain.결제승인됨;
 import lombok.Data;
 
 @Entity
@@ -31,12 +30,6 @@ public class Payment {
 
         PaymentCanceled paymentCanceled = new PaymentCanceled(this);
         paymentCanceled.publishAfterCommit();
-    }
-
-    @PrePersist
-    public void onPrePersist() {
-        결제승인됨 결제승인됨 = new 결제승인됨(this);
-        결제승인됨.publishAfterCommit();
     }
 
     public static PaymentRepository repository() {

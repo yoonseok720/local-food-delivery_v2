@@ -115,5 +115,5 @@ public class Order  {
 
 
     @PreUpdate
-    public void onPreUpdate(){
+    public void onPreUpdate(){}
 }

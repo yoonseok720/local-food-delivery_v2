@@ -17,27 +17,12 @@ import localfooddelivery.domain.*;
 
 @Service
 @Transactional
-public class PolicyHandler{
-    @Autowired 결제이력Repository 결제이력Repository;
+public class PolicyHandler{   
     @Autowired PaymentRepository paymentRepository;
     
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString){}
-
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='주문취소됨'")
-    public void whenever주문취소됨_결재취소함(@Payload 주문취소됨 주문취소됨){
-
-        주문취소됨 event = 주문취소됨;
-        System.out.println("\n\n##### listener 결재취소함 : " + 주문취소됨 + "\n\n");
-
-
-        
-
-        // Sample Logic //
-
-        
-
-    }
+    
 
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderCanceled'")
     public void wheneverOrderCanceled_CancelPayment(@Payload OrderCanceled orderCanceled){

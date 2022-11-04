@@ -17,42 +17,12 @@ import localfooddelivery.domain.*;
 
 @Service
 @Transactional
-public class PolicyHandler{
-    @Autowired 주문관리Repository 주문관리Repository;
+public class PolicyHandler{    
     @Autowired OrderRepository orderRepository;
     
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString){}
-
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='결제승인됨'")
-    public void whenever결제승인됨_주문정보받음(@Payload 결제승인됨 결제승인됨){
-
-        결제승인됨 event = 결제승인됨;
-        System.out.println("\n\n##### listener 주문정보받음 : " + 결제승인됨 + "\n\n");
-
-
-        
-
-        // Sample Logic //
-
-        
-
-    }
-
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='결제취소됨'")
-    public void whenever결제취소됨_주문취소처리(@Payload 결제취소됨 결제취소됨){
-
-        결제취소됨 event = 결제취소됨;
-        System.out.println("\n\n##### listener 주문취소처리 : " + 결제취소됨 + "\n\n");
-
-
-        
-
-        // Sample Logic //
-
-        
-
-    }
+  
 
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='PaymentApproved'")
     public void wheneverPaymentApproved_OrderReceive(@Payload PaymentApproved paymentApproved){

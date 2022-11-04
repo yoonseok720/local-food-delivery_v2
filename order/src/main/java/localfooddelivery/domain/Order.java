@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.*;
 import localfooddelivery.OrderApplication;
 import localfooddelivery.domain.OrderCanceled;
-import localfooddelivery.domain.Ordered;
+import localfooddelivery.domain.OrderPlaced;
 import lombok.Data;
 
 @Entity
@@ -38,7 +38,7 @@ public class Order {
             .getBean(localfooddelivery.external.PaymentService.class)
             .approvePayment(payment);
 
-        Ordered ordered = new Ordered(this);
+        OrderPlaced ordered = new OrderPlaced(this);
         ordered.publishAfterCommit();
     }
 
@@ -49,7 +49,10 @@ public class Order {
     }
 
     @PreRemove
-    public void onPreRemove() {}
+    public void onPreRemove() {
+        OrderCanceled orderCancelled = new OrderCanceled(this);
+        orderCancelled.publishAfterCommit();
+    }
 
     public static OrderRepository repository() {
         OrderRepository orderRepository = OrderApplication.applicationContext.getBean(
