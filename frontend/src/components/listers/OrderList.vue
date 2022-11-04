@@ -144,3 +144,4 @@
 
                             [ Userid :  {{data.userid }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 'userid': '',
+                'qty': '',

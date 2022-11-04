@@ -71,11 +71,11 @@ public class PolicyHandler{
 
     }
 
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='PaymentApproved'")
-    public void wheneverPaymentApproved_OrderCancel(@Payload PaymentApproved paymentApproved){
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='PaymentCanceled'")
+    public void wheneverPaymentCanceled_OrderCancel(@Payload PaymentCanceled paymentCanceled){
 
-        PaymentApproved event = paymentApproved;
-        System.out.println("\n\n##### listener OrderCancel : " + paymentApproved + "\n\n");
+        PaymentCanceled event = paymentCanceled;
+        System.out.println("\n\n##### listener OrderCancel : " + paymentCanceled + "\n\n");
 
 
         

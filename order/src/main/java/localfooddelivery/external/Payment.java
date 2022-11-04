@@ -7,7 +7,7 @@ public class Payment {
 
     private Long payid;
     private Long orderId;
-    private Double amount;
+    private Integer amount;
     private String status;
 }
 

@@ -8,12 +8,12 @@ import java.util.*;
 @ToString
 public class DeliveryStarted extends AbstractEvent {
 
+    private Long orderId;
+    private String userid;
     private String menu;
     private String address;
-    private Long orderId;
+    private String qty;
     private String status;
-    private String userid;
-    private Integer qty;
 }
 
 

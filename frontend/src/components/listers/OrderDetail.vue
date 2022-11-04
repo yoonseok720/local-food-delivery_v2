@@ -113,3 +113,4 @@
     };
 </script>
                 <String label="Userid" v-model="item.userid" :editMode="editMode" @change="change" />
+                <String label="Qty" v-model="item.qty" :editMode="editMode" @change="change" />

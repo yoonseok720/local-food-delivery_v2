@@ -7,19 +7,17 @@ import lombok.*;
 
 @Data
 @ToString
-public class Ordered extends AbstractEvent {
+public class PaymentCanceled extends AbstractEvent {
 
+    private Long payid;
     private Long orderId;
-    private String menu;
-    private Integer qty;
+    private Double amount;
     private String status;
-    private String userId;
-    private String address;
 
-    public Ordered(Order aggregate){
+    public PaymentCanceled(Payment aggregate){
         super(aggregate);
     }
-    public Ordered(){
+    public PaymentCanceled(){
         super();
     }
 }
