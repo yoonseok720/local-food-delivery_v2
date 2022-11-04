@@ -4,6 +4,9 @@ http :8081/orders orderId=1  qty=2 userId="Hwang"
 http :8081/orders orderId=2  qty=1 userId="Lee"
 http :8081/orders orderId=12323  qty=1 userId="Roy"
 
+http :8081/orders 
+http POST :8081/orders orderId=1 status="Canceled"
+
 http DELETE :8081/orders/1
 
 
@@ -11,3 +14,4 @@ http :8082/payments payid=1 orderId=1 amount=20000 status="주문됨"
 
 
 http :8082/payments
+http :8082/payments/1
