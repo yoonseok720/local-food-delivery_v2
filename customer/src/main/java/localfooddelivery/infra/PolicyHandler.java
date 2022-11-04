@@ -94,11 +94,11 @@ public class PolicyHandler{
         
 
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Ordered'")
-    public void wheneverOrdered_KakaoNotice(@Payload Ordered ordered){
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderPlaced'")
+    public void wheneverOrderPlaced_KakaoNotice(@Payload OrderPlaced orderPlaced){
 
-        Ordered event = ordered;
-        System.out.println("\n\n##### listener KakaoNotice : " + ordered + "\n\n");
+        OrderPlaced event = orderPlaced;
+        System.out.println("\n\n##### listener KakaoNotice : " + orderPlaced + "\n\n");
 
 
         // Comments // 

@@ -198,3 +198,4 @@
 </script>
 
             <String label="Userid" v-model="value.userid" :editMode="editMode"/>
+            <String label="Qty" v-model="value.qty" :editMode="editMode"/>

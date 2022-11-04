@@ -1,8 +1,6 @@
 package localfooddelivery.domain;
 
-import localfooddelivery.domain.배달시작됨;
 import localfooddelivery.domain.DeliveryStarted;
-import localfooddelivery.domain.쿠폰발행됨;
 import localfooddelivery.StoreApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -15,6 +13,15 @@ import java.util.Date;
 
 public class Order  {
 
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    
+    
+    
+    
+    
+    private Long orderId;
     
     
     
@@ -34,20 +41,11 @@ public class Order  {
     
     private String address;
     
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     
     
     
     
-    
-    private Long orderId;
-    
-    
-    
-    
-    
-    private Integer qty;
+    private String qty;
     
     
     
@@ -59,25 +57,9 @@ public class Order  {
     public void onPostPersist(){
 
 
-        배달시작됨 배달시작됨 = new 배달시작됨(this);
-        배달시작됨.publishAfterCommit();
-
-
-
         DeliveryStarted deliveryStarted = new DeliveryStarted(this);
         deliveryStarted.publishAfterCommit();
 
-    }
-    @PrePersist
-    public void onPrePersist(){
-
-
-        쿠폰발행됨 쿠폰발행됨 = new 쿠폰발행됨(this);
-        쿠폰발행됨.publishAfterCommit();
-
-    }
-    @PreUpdate
-    public void onPreUpdate(){
     }
 
     public static OrderRepository repository(){
@@ -109,7 +91,7 @@ public class Order  {
 
         
     }
-    public static void orderCancel(PaymentApproved paymentApproved){
+    public static void orderCancel(PaymentCanceled paymentCanceled){
 
         /** Example 1:  new item 
         Order order = new Order();
@@ -119,7 +101,7 @@ public class Order  {
 
         /** Example 2:  finding and process
         
-        repository().findById(paymentApproved.get???()).ifPresent(order->{
+        repository().findById(paymentCanceled.get???()).ifPresent(order->{
             
             order // do something
             repository().save(order);
@@ -132,4 +114,6 @@ public class Order  {
     }
 
 
+    @PreUpdate
+    public void onPreUpdate(){
 }
