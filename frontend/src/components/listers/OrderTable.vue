@@ -66,11 +66,12 @@
             values: [],
             headers: 
                 [
-                    { text: "id", value: "id" },
-                    { text: "menu", value: "menu" },
-                    { text: "address", value: "address" },
                     { text: "orderId", value: "orderId" },
+                    { text: "menu", value: "menu" },
                     { text: "qty", value: "qty" },
+                    { text: "status", value: "status" },
+                    { text: "userId", value: "userId" },
+                    { text: "address", value: "address" },
                 ],
             order : [],
             newValue: {},
@@ -88,10 +89,12 @@
             this.values = temp.data._embedded.orders;
 
             this.newValue = {
+                'orderId': 0,
                 'menu': '',
-                'address': '',
-                'orderId': '',
                 'qty': 0,
+                'status': '',
+                'userId': '',
+                'address': '',
             }
         },
         methods: {
@@ -113,3 +116,5 @@
     }
 </script>
 
+                    { text: "userid", value: "userid" },
+                'userid': '',

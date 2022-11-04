@@ -29,7 +29,7 @@ public class Payment  {
     
     
     
-    private String orderId;
+    private Long orderId;
     
     
     

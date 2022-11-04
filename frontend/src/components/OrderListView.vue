@@ -21,7 +21,13 @@
         },
         data: () => ({
             headers: [
-                { text: "id", value: "id" },
+                { text: "orderId", value: "orderId" },
+                { text: "menu", value: "menu" },
+                { text: "qty", value: "qty" },
+                { text: "orderStatus", value: "orderStatus" },
+                { text: "userId", value: "userId" },
+                { text: "address", value: "address" },
+                { text: "payStatus", value: "payStatus" },
             ],
             orderList : [],
         }),

@@ -10,7 +10,7 @@ import lombok.*;
 public class PaymentApproved extends AbstractEvent {
 
     private Long payid;
-    private String orderId;
+    private Long orderId;
     private Double amount;
     private String staus;
 
@@ -21,4 +21,6 @@ public class PaymentApproved extends AbstractEvent {
     public PaymentApproved() {
         super();
     }
+
+    private String status;
 }
