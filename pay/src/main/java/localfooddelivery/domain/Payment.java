@@ -43,9 +43,11 @@ public class Payment {
         
         // modified 
         repository().findById(orderCanceled.getOrderId()).ifPresent(payment->{
-            payment.setStatus("Canceled");
-            repository().save(payment);        
-        });        
+            if (orderCanceled.getStatus() == "Canceled") {
+                payment.setStatus("Canceled");                
+                repository().save(payment);        
+            }
+        });       
 
     }
 }
